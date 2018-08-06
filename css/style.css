@@ -145,11 +145,18 @@ input {
       outline: none; }
   .members img {
     height: 90px;
-    margin-bottom: 60px; }
+    margin-bottom: 60px;
+    max-width: 100%; }
   .members .popover-content img {
     margin: 0;
     height: auto;
     width: 100%; }
+
+.tanu {
+  min-height: 90px; }
+  .tanu img {
+    height: auto;
+    padding: 16px; }
 
 .alliance-modal .modal-dialog button.close {
   position: absolute;
