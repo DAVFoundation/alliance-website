@@ -571,17 +571,25 @@
 					<form id="contactForm" action="" method="POST">
         	   			<input type="hidden" name="_subject" value="New member joining the Alliance!" />
         	   			<input type="hidden" name="_cc" value="noam@dav.network" />
-        	   			<input type="hidden" name="_cc" value="john@dav.network" />
+                  <input type="hidden" name="_cc" value="john@dav.network" />
  						<div class="row">
         	   			    <div class="col-sm-12">
-        	   			    	<label for="Name">Name</label>
+        	   			    	<label for="Name">Name <span style="color:#ff6a46;">*</span></label>
         	   			    	<input type="text" id="Name" name="Name" required>
+
+                        <label for="Email">E-mail <span style="color:#ff6a46;">*</span></label>
+                        <input type="text" id="Email" name="Email" required>
+  
+                        <label for="Company">Company Name <span style="color:#ff6a46;">*</span></label>
+                        <input type="text" id="Company" name="Company" required>
 	
-        	   			        <label for="Company">Company</label>
-        	   			        <input type="text" id="Company" name="Company" required>
+                        <label for="CompanyWebsite">Company Website <span style="color:#ff6a46;">*</span></label>
+                        <input type="text" id="CompanyWebsite" name="CompanyWebsite" required>
+
+      	   			        <label for="CompanyDescription">Company Description <span style="color:#ff6a46;">*</span></label>
+      	   			        <input type="text" id="CompanyDescription" name="CompanyDescription" required>
 	
-        	   			        <label for="Email">E-mail</label>
-        	   			        <input type="text" id="Email" name="Email" required>
+        	   			        
         	   			    </div>
 	
         	   			  </div>
@@ -1078,7 +1086,16 @@
               Email: {
                 required: true,
                 email: true
-              }//,
+              },
+              CompanyWebsite: {
+                  required: true,
+                  minlength: 3
+              },
+              CompanyDescription: {
+                  required: true,
+                  minlength: 3
+              }
+              //,
               // message: {
               //     required: true,
               //     minlength: 10
@@ -1086,10 +1103,12 @@
           },
           messages: {
               Name: "Please specify your name",
-              Company: "Please specify your company",
+              Company: "Please specify your company's name",
+              CompanyWebsite: "Please specify your company's website",
+              CompanyDescription: "Please provide a short description of your company",
               Email: {
-                required: "Invalid email",
-                email: "Invalid email"
+                required: "Please specify a valid email address",
+                email: "Please specify a valid email address"
               }
             },
           submitHandler: function (form) {
